@@ -22,7 +22,6 @@ for line in fori:
     if theLine == '-------':
         print(count)
         if status > 0 and theTitle != '' and trans_zh != '':
-            print('here')
             ftmp.write(theTitle + '\n')
             ftmp.write(trans_zh + '\n')
             for lang in languages:
@@ -31,9 +30,6 @@ for line in fori:
                 ftmp.write(translated + '\n')
             theTitle = ''
             trans_zh = ''
-
-            # Screenshot
-            #subprocess.call(['./shot/phantomjs', './shot/test.js'])
 
         status = 1
 
@@ -61,8 +57,6 @@ if theTitle != '' and trans_zh != '':
         translated = subprocess.getoutput('trans -b :' + lang + ' "' + theTitle + '"')
         print(translated)
         ftmp.write(translated + '\n')
-
-    subprocess.call(['./shot/phantomjs', './shot/take_shot.js', 'ddff'])
 
 fori.close()
 ftmp.close()

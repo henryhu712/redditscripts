@@ -24,10 +24,6 @@ for line in fori:
     # Before translating
 
     if theLine == '-------':
-        '''
-        if status == 2:
-            ftmp.write('\n')
-        '''
         ftmp.write(theLine + '\n')
         status = 1
 
